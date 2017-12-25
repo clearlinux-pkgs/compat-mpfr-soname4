@@ -6,7 +6,7 @@
 #
 Name     : compat-mpfr-soname4
 Version  : 3.1.6
-Release  : 20
+Release  : 21
 URL      : https://ftp.gnu.org/gnu/mpfr/mpfr-3.1.6.tar.xz
 Source0  : https://ftp.gnu.org/gnu/mpfr/mpfr-3.1.6.tar.xz
 Source99 : https://ftp.gnu.org/gnu/mpfr/mpfr-3.1.6.tar.xz.sig
@@ -67,7 +67,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1514216519
+export SOURCE_DATE_EPOCH=1514216663
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -86,7 +86,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1514216519
+export SOURCE_DATE_EPOCH=1514216663
 rm -rf %{buildroot}
 %make_install
 
@@ -95,27 +95,28 @@ rm -rf %{buildroot}
 
 %files data
 %defattr(-,root,root,-)
-/usr/share/doc/mpfr/AUTHORS
-/usr/share/doc/mpfr/BUGS
-/usr/share/doc/mpfr/COPYING
-/usr/share/doc/mpfr/COPYING.LESSER
-/usr/share/doc/mpfr/FAQ.html
-/usr/share/doc/mpfr/NEWS
-/usr/share/doc/mpfr/TODO
-/usr/share/doc/mpfr/examples/ReadMe
-/usr/share/doc/mpfr/examples/divworst.c
-/usr/share/doc/mpfr/examples/rndo-add.c
-/usr/share/doc/mpfr/examples/sample.c
-/usr/share/doc/mpfr/examples/version.c
+%exclude /usr/share/doc/mpfr/AUTHORS
+%exclude /usr/share/doc/mpfr/BUGS
+%exclude /usr/share/doc/mpfr/COPYING
+%exclude /usr/share/doc/mpfr/COPYING.LESSER
+%exclude /usr/share/doc/mpfr/FAQ.html
+%exclude /usr/share/doc/mpfr/NEWS
+%exclude /usr/share/doc/mpfr/TODO
+%exclude /usr/share/doc/mpfr/examples/ReadMe
+%exclude /usr/share/doc/mpfr/examples/divworst.c
+%exclude /usr/share/doc/mpfr/examples/rndo-add.c
+%exclude /usr/share/doc/mpfr/examples/sample.c
+%exclude /usr/share/doc/mpfr/examples/version.c
 
 %files dev
 %defattr(-,root,root,-)
-/usr/include/*.h
-/usr/lib64/libmpfr.so
+%exclude /usr/include/mpf2mpfr.h
+%exclude /usr/include/mpfr.h
+%exclude /usr/lib64/libmpfr.so
 
 %files doc
 %defattr(-,root,root,-)
-%doc /usr/share/info/*
+%exclude /usr/share/info/mpfr.info
 
 %files lib
 %defattr(-,root,root,-)
