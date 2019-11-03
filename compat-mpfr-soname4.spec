@@ -6,7 +6,7 @@
 #
 Name     : compat-mpfr-soname4
 Version  : 3.1.6
-Release  : 27
+Release  : 28
 URL      : https://ftp.gnu.org/gnu/mpfr/mpfr-3.1.6.tar.xz
 Source0  : https://ftp.gnu.org/gnu/mpfr/mpfr-3.1.6.tar.xz
 Source1 : https://ftp.gnu.org/gnu/mpfr/mpfr-3.1.6.tar.xz.sig
